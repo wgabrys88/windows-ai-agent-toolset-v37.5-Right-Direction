@@ -15,7 +15,7 @@
 
 Actually, having capture.py and tools.py read JSON files each turn is fine — they're subprocess-per-turn anyway. But tools.py runs inside execute.py's process, so execute.py should read the files and pass the data to tools.configure().
 
-PROPOSED PERSISTENCE APPROACH: A SPECIALIZED CLASS OR FILE THAT WILL HANDLE ALL THE DATA RELATED
+**PROPOSED PERSISTENCE APPROACH: A SPECIALIZED CLASS OR FILE THAT WILL HANDLE ALL THE DATA RELATED**
 TO STATE OF THE ENTITY "story" / SYSTEM IN OVERALL. It will also hold all the loging logic, it may be a good idea.
 IT CAN ALSO HOLD ALL THE BASE64 data - the hardware on which the system is running is capable of handling these large memory operations, delays are not a problem. The VLM via LM Studio is taking a tens of seconds to finish processing single image so couple of miliseconds for copying data in memory or sending huge data via api is ACCEPTABLE - I prefer to have slower system than system that operates with data slicing /cutting off. Quality is the priority of this project.
 
@@ -2025,4 +2025,5 @@ body {
    - `POST /allowed_tools` — sets enabled tool names
 
 6. **Config simplified** — Removed `VIRTUAL_CANVAS`, `VIRTUAL_SCREENSHOT`, `EXECUTE_ACTIONS`, `OVERLAY_DEBUG`, `CROP_BOX`. Only `WIDTH`, `HEIGHT`, `PHYSICAL_EXECUTION`, `CAPTURE_DELAY`, `LOOP_DELAY`, `CACHE_PROMPT`, and sampling params remain. Crop is now controlled interactively via the panel.
+
 
